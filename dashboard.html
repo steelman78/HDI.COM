@@ -1,6 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDI | Internal Terminal</title>
+    <style>
+        body {
+            background-color: #050a12;
+            color: #64ffda;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        .terminal-container {
+            border: 1px solid #3dace3;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.6);
+            box-shadow: 0 0 15px rgba(61, 172, 227, 0.2);
+        }
+        h1, h2 { color: #fff; text-shadow: 0 0 5px #3dace3; }
+        .timestamp { color: #8892b0; font-size: 0.8rem; }
+        .message-box {
+            border-left: 3px solid #3dace3;
+            background: rgba(61, 172, 227, 0.05);
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .sender { color: #3dace3; font-weight: bold; }
+        .message-content { margin-top: 10px; color: #fff; }
+        .status-bar {
+            margin-top: 30px;
+            border-top: 1px solid #3dace3;
+            padding-top: 10px;
+            font-size: 0.9rem;
+            color: #3dace3;
+        }
+        /* Glitch effect for the warning */
+        @keyframes glitch {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .warning {
+            color: #ff4b2b;
+            animation: glitch 1s infinite;
+            font-weight: bold;
+        }
+    </style>
+</head>
 <body>
-    <h1>SECRET DATA PAGE</h1>
+
+    <div class="terminal-container">
+        <h1>// SYSTEM ACCESS: LEVEL 4</h1>
+        <p>Welcome, User <strong>HDI-7709</strong>. Accessing secure server logs...</p>
+        
+        <div class="status-bar">
+            <span class="warning">[!] SECURITY NOTICE: Unauthorized file access detected in sector 7.</span>
+        </div>
+
+        <h2>// INCOMING MESSAGES</h2>
+
+        <div class="message-box" style="border-left: 3px solid #ff0000; background: rgba(255, 0, 0, 0.05);">
+            <div class="sender" style="color: #ff0000;">FROM: Olivia Chen (Executive Director)</div>
+            <div class="timestamp" style="color: #8892b0;">DATE: 2026-02-28 23:25:10</div>
+            <div class="message-content" style="color: #fff;">
+                To: IT Department / Security Division<br>
+                Subject: GET IT TOGETHER!!!<br><br>
+                ARE YOU KIDDING ME?! FIRST TIKTOK, NOW THE WEBSITE? People are posting memes of our corporate logo on TikTok and now the site is throwing 404 errors because of whatever "update" you tried to push? Do I need to fly down to the server room and fix this myself? I want the TikTok account deactivated and the website back up in 15 minutes, or I will start firing people personally. DO NOT MAKE ME ASK AGAIN.
+            </div>
+        </div>
+
+        <div class="message-box">
+            <div class="sender">FROM: Dr. Aris Thorne (Head of Bio-Sync)</div>
+            <div class="timestamp">DATE: 2026-02-28 23:15:02</div>
+            <div class="message-content">
+                To: Research Division<br>
+                Subject: Subject 4-B Status<br><br>
+                Containment breach in sector 3 was temporary, but Subject 4-B is showing increased cognitive resistance to the neural-link. Increased sedation recommended. Director Chen is not to be informed until we have data on the latest modification.
+            </div>
+        </div>
+
+        <div class="message-box">
+            <div class="sender">FROM: Human Resources</div>
+            <div class="timestamp">DATE: 2026-02-28 09:00:00</div>
+            <div class="message-content">
+                Subject: Mandatory Cybersecurity Training<br><br>
+                Reminder: All staff must complete the 2026 phishing awareness module by Friday. Failure to comply will result in temporary suspension of network privileges.
+            </div>
+        </div>
+        
+    </div>
+
 </body>
 </html>
