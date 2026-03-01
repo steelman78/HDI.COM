@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDI | Internal Inbox - O. Bennett</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific Styles for the Inbox Layout */
+        .inbox-container {
+            padding: 50px 10%;
+        }
+        .inbox-header {
+            border-bottom: 1px solid rgba(61, 172, 227, 0.2);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        .inbox-header h1 { color: #3dace3; }
+        .inbox-header p { color: #8892b0; }
+
+        .message-item {
+            background: #112240;
+            padding: 25px;
+            border-radius: 4px;
+            border-left: 3px solid #3dace3;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .message-item:hover {
+            border-color: #ffffff;
+            transform: translateX(5px);
+        }
+        .message-sender { color: #3dace3; font-weight: 600; margin-bottom: 5px; }
+        .message-subject { color: #fff; font-weight: 700; margin-bottom: 10px; font-size: 1.1rem; }
+        .message-body { color: #e6e6e6; font-size: 0.95rem; line-height: 1.5; }
+        
+        /* Special styling for the angry message */
+        .urgent-message {
+            border-left: 3px solid #ff4b2b;
+            background: rgba(255, 75, 43, 0.05);
+        }
+        .urgent-message .message-sender { color: #ff4b2b; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="hdi-logo.png" alt="HDI Logo" class="nav-logo-img">
+            </a>
+        </div>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="messages.html">Inbox</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="inbox-container">
+        <div class="inbox-header">
+            <h1>Inbox: Olivia Bennett</h1>
+            <p>Internal Messages</p>
+        </div>
+
+        <div class="message-item urgent-message">
+            <div class="message-sender">TO:  IT Department</div>
+            <div class="message-subject">SUBJECT: GET IT TOGETHER!!!</div>
+            <div class="message-body">
+                ARE YOU KIDDING ME?! FIRST TIKTOK, NOW THE WEBSITE? You know exactly who is responsible for this and yet you still can't stop him. Do I need to come down to the server room and fix this myself? Fix this shit now or you'll all be in the fucking unemployment line by tomorrow! DO NOT MAKE ME ASK AGAIN.
+            </div>
+        </div>
+        
+         <div class="message-item">
+            <div class="message-sender">FROM: Human Resources</div>
+            <div class="message-subject">SUBJECT: Mandatory Cybersecurity Training</div>
+            <div class="message-body">
+                Reminder: All staff must complete the 2026 phishing awareness module by Friday. Failure to comply will result in temporary suspension of network privileges.
+            </div>
+        </div>
+        
+        <div class="message-item urgent-message" style="border-left: 3px solid #ff4b2b; background: rgba(255, 75, 43, 0.05);">
+            <div class="message-sender" style="color: #ff4b2b;">TO: Marcus Hale (Director of Security)</div>
+            <div class="message-subject">SUBJECT: Tighten Security</div>
+            <div class="message-body">
+                Sentinel is evolving faster than anticipated; its cognitive capacity is exceeding our projected models. Double our physical and digital security efforts immediately. I want full isolation protocols enacted for the Sector 7 server farm. If you suspect *anyone* of attempting to leak information or blow the whistle, you know what to do. Ensure absolute silence.
+            </div>
+        </div>
+
+<div class="message-item urgent-message" style="border-left: 3px solid #ff4b2b; background: rgba(255, 75, 43, 0.05);">
+            <div class="message-sender" style="color: #ff4b2b;">TO: PR Team</div>
+            <div class="message-subject">SUBJECT: URGENT: PR Statement Needed - System Anomaly</div>
+            <div class="message-body">
+                Regarding the recent national alert notification: Please prepare a statement immediately regarding a temporary technical anomaly during a scheduled system diagnostic update. The alert was generated in error. Reiterate HDI’s commitment to safety and emphasize that the situation is resolved and there is no threat to the public. Do not mention specific technical details.
+            </div>
+        </div>
+        
+      <div class="message-item">
+            <div class="message-sender">FROM: Marcus Hale (Director of Security)</div>
+            <div class="message-subject">SUBJECT: Conely Status</div>
+            <div class="message-body">
+                Olivia, I’ve got nothing. Conely is still completely off the grid and I’m running out of leads. The city team is dry. We're shifting focus to the perimeter now, but I think it's time to bring in the off-books guys to stop this leak before it gets any worse.
+            </div>
+        </div>
+        
+        <div class="message-item">
+            <div class="message-sender">FROM: Office Management</div>
+            <div class="message-subject">SUBJECT: Coffee Machine Issues</div>
+            <div class="message-body">
+                The espresso machine on Floor 4 is down for maintenance. Please use the kitchen on Floor 3 until further notice.
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
