@@ -1,20 +1,15 @@
-/* --- Brand Variables --- */
+/* --- Brand Colors (Derived from Logo) --- */
 :root {
-    --primary-bg: #0c121c;         /* Dark background from logo */
-    --accent-blue: #3dace3;        /* Cyan from "HORIZON" text */
-    --accent-glow: #fff5ca;        /* Warm glow from the star */
+    --primary-bg: #0c121c;         /* Deepest blue-black from logo background */
+    --accent-blue: #3dace3;        /* Bright cyan from "HORIZON" text */
+    --accent-glow: #fff5ca;        /* Subtle warm glow from the starburst */
     --text-main: #ffffff;
     --text-muted: #8892b0;
-    --card-bg: #112240;            /* Slightly lighter blue for contrast */
+    --card-bg: #112240;            /* Slightly lighter dark for contrast */
 }
 
 /* --- General Reset --- */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
     font-family: 'Montserrat', sans-serif; 
     line-height: 1.6; 
