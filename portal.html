@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDI | Employee Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styles for the login form */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 20px;
+        }
+        .login-box {
+            background: #112240;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(61, 172, 227, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .login-box h2 { color: #3dace3; margin-bottom: 10px; }
+        .login-box p { color: #8892b0; margin-bottom: 30px; font-size: 0.9rem; }
+        .input-group { text-align: left; margin-bottom: 20px; }
+        .input-group label { display: block; color: #fff; margin-bottom: 8px; font-weight: 600; }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: #0c121c;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            color: #fff;
+            font-family: monospace;
+        }
+        .login-btn-submit {
+            width: 100%;
+            padding: 15px;
+            background-color: #3dace3;
+            border: none;
+            border-radius: 4px;
+            color: #0c121c;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        .login-btn-submit:hover { background-color: #fff; }
+        #error-msg {
+            color: #ff4b2b;
+            margin-top: 15px;
+            display: none;
+            font-size: 0.9rem;
+        }
+        /* Animation for wrong password */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="hdi-logo.png" alt="HDI Logo" class="nav-logo-img">
+            </a>
+        </div>
+        <ul>
+            <li><a href="vision.html">Our Vision</a></li>
+            <li><a href="divisions.html">Divisions</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="portal.html" class="login-btn">Employee Portal</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Authorized Access Only</h2>
+            <p>Please enter your credentials to access the internal terminal.</p>
+            
+            <div class="input-group">
+                <label for="empID">Employee ID</label>
+                <input type="text" id="empID" placeholder="e.g. HDI-0000">
+            </div>
+            
+            <div class="input-group">
+                <label for="phone">Work Phone Number</label>
+                <input type="password" id="phone" placeholder="XXXXXXXXXX">
+            </div>
+            
+            <button class="login-btn-submit" onclick="validateLogin()">Authenticate</button>
+            
+            <p id="error-msg">Invalid Credentials. Access Denied.</p>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            // Retrieve input values
+            const id = document.getElementById('empID').value;
+            const phone = document.getElementById('phone').value;
+            const errorMsg = document.getElementById('error-msg');
+            const loginBox = document.querySelector('.login-box');
+
+            // --- ARG LOGIC ---
+            // ID: HDI-7709
+            // Phone: 2021593570
+            if (id.toUpperCase() === "HDI-7709" && phone === "2021593570") {
+                // Successful login - redirect to secret page
+                window.location.href = "dashboard.html"; 
+            } else {
+                // Failed login - show error and shake the box
+                errorMsg.style.display = "block";
+                loginBox.style.animation = "shake 0.4s";
+                setTimeout(() => { loginBox.style.animation = ""; }, 400);
+            }
+        }
+    </script>
+
+</body>
+</html>
