@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDI | Operations & Divisions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .divisions-container {
+            padding: 60px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .divisions-header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid rgba(61, 172, 227, 0.2);
+            padding-bottom: 30px;
+        }
+
+        .divisions-header h1 {
+            color: #3dace3;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .division-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .div-card {
+            background: #112240;
+            padding: 40px;
+            border-radius: 4px;
+            border-left: 4px solid #3dace3;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .div-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+
+        .div-card h3 {
+            color: #ccd6f6;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .div-card p {
+            color: #8892b0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .tag {
+            display: inline-block;
+            color: #3dace3;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="hdi-logo.png" alt="HDI Logo" class="nav-logo-img">
+            </a>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vision.html">Our Vision</a></li>
+            <li><a href="divisions.html">Divisions</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="portal.html" class="login-btn">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="divisions-container">
+        <div class="divisions-header">
+            <h1>Operations and Divisions</h1>
+            <p>Integrated solutions across the technological frontier.</p>
+        </div>
+
+        <div class="division-grid">
+            <div class="div-card">
+                <span class="tag">Specialized R&D</span>
+                <h3>Neural Systems Research</h3>
+                <p>Focused on advanced artificial intelligence, adaptive neural architectures, and cognitive computing platforms to bridge the gap between biological and synthetic intelligence.</p>
+            </div>
+
+            <div class="div-card">
+                <span class="tag">National Resilience</span>
+                <h3>Strategic Infrastructure & Continuity</h3>
+                <p>Oversees critical systems engineering, emergency communications integration, and national resilience frameworks to ensure stability in complex threat environments.</p>
+            </div>
+
+            <div class="div-card">
+                <span class="tag">Defense & Aerospace</span>
+                <h3>Advanced Defense Technologies</h3>
+                <p>Develops secure aerospace systems, autonomous platforms, and next-generation defense modeling tools designed for high-stakes operational readiness.</p>
+            </div>
+
+            <div class="div-card">
+                <span class="tag">Integrity & Risk</span>
+                <h3>Cybersecurity & Systems Integrity</h3>
+                <p>Specializes in secure architecture design, threat detection, anomaly response, and digital risk mitigation for both federal and private-sector partners.</p>
+            </div>
+
+            <div class="div-card">
+                <span class="tag">Foundational Science</span>
+                <h3>Research & Development (R&D)</h3>
+                <p>The core of HDI’s innovation engine. This division handles multidisciplinary experiments in materials science, predictive systems, and experimental physics.</p>
+            </div>
+            
+            <div class="div-card ghost-card">
+    <span class="tag">ERROR: ACCESS RESTRICTED</span>
+    <h3>Project Sentinal</h3>
+    <p>Unauthorized access to this data is a federal offense. [DELETED] ... [DELETED] ... [DELETED]</p>
+</div>
+
+<style>
+    .ghost-card {
+        opacity: 0; /* Invisible by default */
+        border-left-color: #ff4d4d; /* Red border instead of blue */
+        transition: opacity 0.5s ease;
+    }
+    .ghost-card:hover {
+        opacity: 1; /* Appears when the mouse is over its empty space */
+    }
+</style>
+        </div>
+    </div>
+
+    <footer>
+        <img src="hdi-logo.png" alt="HDI Logo" class="footer-logo-img">
+        <p class="brand-name">HORIZON DYNAMICS INTERNATIONAL</p>
+        <p>&copy; 2026. All rights reserved. <br> 
+        <small>Ethics. Progress. Security.</small></p>
+    </footer>
+
+</body>
+</html>
