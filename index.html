@@ -6,6 +6,63 @@
     <title>Horizon Dynamics International | Where Vision Meets Reality</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* News Banner Styling */
+        .news-banner {
+            background-color: #0a192f;
+            border-top: 1px solid #3dace3;
+            border-bottom: 1px solid #3dace3;
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .news-label {
+            background-color: #0a192f;
+            color: #3dace3;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0 25px;
+            z-index: 10;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border-right: 1px solid rgba(61, 172, 227, 0.3);
+        }
+
+        .news-ticker-container {
+            display: flex;
+            gap: 60px;
+            animation: ticker-scroll 35s linear infinite;
+        }
+
+        .news-item {
+            color: #e6e6e6;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .news-item span {
+            color: #3dace3;
+            margin-right: 12px;
+            font-weight: 600;
+            font-family: monospace;
+        }
+
+        /* Ticker Animation */
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } 
+        }
+
+        /* Pause on hover for players to investigate the cipher */
+        .news-banner:hover .news-ticker-container {
+            animation-play-state: paused;
+        }
+    </style>
 </head>
 <body>
 
@@ -32,25 +89,41 @@
         </div>
     </header>
 
-    <section id="about" class="section">
-        <h2>Global Integrity. Absolute Innovation.</h2>
-        <p>Founded in 1968, HDI has grown from a boutique tech firm into a multi-national conglomerate. We don't just predict the future; we manufacture it.</p>
+    <section class="news-banner">
+        <div class="news-label">Latest Updates</div>
+        <div class="news-ticker-container">
+            <div class="news-item"><span>[JAN 28]</span> Internal Audit Underway at HDI Following Nationwide Alert Incident.</div>
+            <div class="news-item"><span>[JAN 19]</span> HDI Awarded Department of Defense Contract for Classified Defense Program.</div>
+            <div class="news-item"><span>[JAN 12]</span> tq paqe zaf dqyqnqd itmf tmbbqzqp fa tuyi</div>
+            <div class="news-item"><span>[JAN 05]</span> CEO Olivia Bennett Addresses Global Energy Summit on Upcoming Product Line.</div>
+            
+            <div class="news-item"><span>[JAN 28]</span> Internal Audit Underway at HDI Following Nationwide Alert Incident.</div>
+            <div class="news-item"><span>[JAN 19]</span> HDI Awarded Department of Defense Contract for Classified Defense Program.</div>
+            <div class="news-item"><span>[JAN 12]</span> tq paqe zaf dqyqnqd itmf tmbbqzqp fa tuyi</div>
+            <div class="news-item"><span>[JAN 05]</span> CEO Olivia Bennett Addresses Global Energy Summit on Upcoming Product Line.</div>
+        </div>
     </section>
 
-    <section id="divisions" class="section bg-dark">
-        <h2>Our Partnerships</h2>
+    <section id="about" class="section">
+        <h2>Our History</h2>
+        <p>Horizon Dynamics International was founded in 1968 by Russell Maxwell, an engineer and systems theorist who believed that the future of national security would be defined not by singular inventions, but by integrated technological ecosystems.</p>
+        <p>Maxwell’s founding vision was clear: develop technologies that would anticipate emerging threats rather than merely respond to them. Today, HDI remains guided by his enduring principle: the horizon is not a limit — it is a responsibility.</p>
+    </section>
+
+    <section id="partnerships" class="section bg-dark">
+        <h2>Strategic Partnerships</h2>
         <div class="grid">
             <div class="card">
                 <h3>Federal Agencies</h3>
-                <p> Horizon Dynamics International collaborates with federal agencies to design, implement, and maintain mission-critical systems that support national resilience and public safety. From secure communications infrastructure to advanced data analytics platforms, our partnerships help ensure continuity, reliability, and rapid response in an increasingly complex threat environment.</p>
+                <p>HDI collaborates with federal agencies to design and maintain mission-critical systems that support national resilience and public safety through advanced data analytics.</p>
             </div>
             <div class="card">
                 <h3>Defense Organizations</h3>
-                <p>HDI works alongside defense organizations to develop next-generation technologies that strengthen operational readiness and strategic deterrence. Our research supports secure systems architecture, autonomous platforms, cyber defense capabilities, and advanced modeling tools designed to enhance decision-making in high-stakes environments.</p>
+                <p>Working alongside defense sectors to develop next-generation technologies that strengthen operational readiness and secure systems architecture.</p>
             </div>
             <div class="card">
                 <h3>Academic Institutions</h3>
-                <p>Innovation begins with discovery. Horizon Dynamics International partners with leading academic institutions to translate emerging research into real-world applications. Through joint research initiatives, funded laboratories, and talent development programs, we help bridge the gap between theoretical breakthroughs and deployable technologies.</p>
+                <p>Partnering with leading universities to translate emerging research in neural-computing and autonomous systems into real-world applications.</p>
             </div>
         </div>
     </section>
@@ -64,6 +137,3 @@
 
 </body>
 </html>
-
-
-
