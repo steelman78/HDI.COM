@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDI | About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific Styles for the About Page Layout */
+        .about-container {
+            padding: 50px 5%;
+            color: #e6e6e6;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .about-header {
+            border-bottom: 1px solid rgba(61, 172, 227, 0.2);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+        .about-header h1 { color: #3dace3; }
+        .about-header p { color: #8892b0; }
+
+        .content-section {
+            margin-bottom: 50px;
+        }
+        .content-section h2 { color: #fff; margin-bottom: 15px; }
+        .content-section p { margin-bottom: 15px; line-height: 1.7; }
+
+        .ceo-profile {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: #112240;
+            padding: 40px;
+            border-radius: 4px;
+            border: 1px solid rgba(61, 172, 227, 0.1);
+        }
+        .ceo-profile img {
+            width: 350px; /* Increased width */
+            height: 350px; /* Increased height */
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3dace3;
+            flex-shrink: 0; /* Prevents image from shrinking */
+        }
+        .ceo-info h3 { color: #3dace3; margin-bottom: 10px; font-size: 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="hdi-logo.png" alt="HDI Logo" class="nav-logo-img">
+            </a>
+        </div>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="learn-more.html">About</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-container">
+        <div class="about-header">
+            <h1>About Horizon Defense Industries</h1>
+            <p>Innovating for a safer, smarter tomorrow.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Our History</h2>
+            <p>Founded in 1968 by visionary computer scientist, Russell Maxwell, Horizon Defense Industries (HDI) began as a foundational neural network firm. While Maxwell's initial focus was on early artificial intelligence models, the company quickly expanded into defense technologies.</p>
+            <p>Over the decades, HDI has pioneered advancements in bio-intelligent neural interfaces, setting the standard for security and public sector infrastructure. Today, HDI continues to lead the industry through strategic acquisitions and transformative technological research.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Leadership</h2>
+            <div class="ceo-profile">
+                <img src="ceo.jpg" alt="Olivia Bennett - CEO">
+                <div class="ceo-info">
+                    <h3>Olivia Bennett</h3>
+                    <p><strong>Executive Director</strong></p>
+                    <p>Olivia Bennett brings over 30 years of experience in high-level strategic planning and defense infrastructure to HDI. Prior to joining Horizon, Ms. Bennett served in a senior capacity for the Department of Defense (DOD), where she led initiatives on national security communication protocols.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
