@@ -3,56 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HDI | Secure Terminal</title>
+    <title>HDI | Employee Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Specific Styles for the Dashboard Layout */
         .dashboard-container {
-            padding: 50px 10%;
+            padding: 60px 10%;
+            max-width: 1000px;
+            margin: 0 auto;
+            color: #e6e6e6;
         }
-        .dashboard-header {
+
+        .terminal-window {
+            background: #0a192f;
+            border: 1px solid #3dace3;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(61, 172, 227, 0.1);
+            text-align: center;
+        }
+
+        .terminal-header {
+            margin-bottom: 30px;
             border-bottom: 1px solid rgba(61, 172, 227, 0.2);
             padding-bottom: 20px;
-            margin-bottom: 40px;
         }
-        .dashboard-header h1 { color: #3dace3; }
-        .dashboard-header p { color: #8892b0; }
 
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+        .terminal-header h2 {
+            color: #3dace3;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
-        .dash-card {
+
+        .search-box {
+            margin: 40px 0;
+        }
+
+        .report-input {
             background: #112240;
-            padding: 30px;
-            border-radius: 4px;
-            border: 1px solid rgba(61, 172, 227, 0.1);
-            text-align: center;
-            transition: 0.3s;
-        }
-        .dash-card:hover {
-            border-color: #3dace3;
-            transform: translateY(-5px);
-        }
-        .dash-card h3 { color: #fff; margin-bottom: 15px; }
-        .dash-card p { color: #8892b0; font-size: 0.9rem; margin-bottom: 20px; }
-        .dash-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: transparent;
             border: 1px solid #3dace3;
             color: #3dace3;
-            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            font-family: 'Courier New', Courier, monospace;
+            width: 300px;
             border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: 0.3s;
+            outline: none;
+            text-align: center;
         }
-        .dash-btn:hover {
-            background-color: #3dace3;
-            color: #0c121c;
+
+        .search-btn {
+            background: #3dace3;
+            color: #0a192f;
+            border: none;
+            padding: 15px 30px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-left: 10px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .search-btn:hover {
+            background: #2a8ab8;
+        }
+
+        #error-msg {
+            color: #ff4d4d;
+            margin-top: 20px;
+            font-weight: 600;
+            display: none; /* Hidden by default */
+        }
+
+        .status-indicator {
+            font-size: 0.8rem;
+            color: #8892b0;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -60,42 +86,51 @@
 
     <nav>
         <div class="logo-container">
-            <a href="index.html">
-                <img src="hdi-logo.png" alt="HDI Logo" class="nav-logo-img">
-            </a>
+            <img src="hdi-logo.png" alt="HDI Logo" class="nav-logo-img">
         </div>
         <ul>
-            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard.html">Terminal</a></li>
             <li><a href="index.html">Logout</a></li>
         </ul>
     </nav>
 
     <div class="dashboard-container">
-        <div class="dashboard-header">
-            <h1>Welcome, Director HDI-7709</h1>
-            <p>Secure Employee Terminal | Sector 7 Access Level</p>
-        </div>
-
-        <div class="dashboard-grid">
-            <div class="dash-card">
-                <h3>Internal Messages</h3>
-                <p>View encrypted communications and directives.</p>
-                <a href="messages.html" class="dash-btn">Access Inbox</a>
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <h2>Internal Report Retrieval</h2>
+                <p>Authorized Personnel Only | System ID: 49-B12</p>
             </div>
 
-            <div class="dash-card">
-                <h3>Secure Documents</h3>
-                <p>Access project files and HR documentation.</p>
-                <a href="documents.html" class="dash-btn">View Files</a>
+            <div class="search-box">
+                <p>Enter 6-Digit Report Identifier:</p>
+                <input type="text" id="reportID" class="report-input" placeholder="RPT-XXXX" maxlength="8">
+                <button class="search-btn" onclick="lookupReport()">RETRIEVE</button>
+                <p id="error-msg">ACCESS DENIED: INVALID IDENTIFIER</p>
             </div>
 
-            <div class="dash-card">
-                <h3>Sector 7 Calendar</h3>
-                <p>Review meeting schedules and briefing times.</p>
-                <a href="#" class="dash-btn">View Schedule</a>
+            <div class="status-indicator">
+                <p>Encryption: Active | Connection: Secure-Link-04</p>
             </div>
         </div>
     </div>
+
+    <script>
+        function lookupReport() {
+            const input = document.getElementById('reportID').value.toUpperCase();
+            const error = document.getElementById('error-msg');
+
+            // Logic for different report codes
+            if (input === 'JAN-12') {
+                window.location.href = 'report-jan12.html'; // Takes them to the secret story
+            } 
+            else if (input === 'DOD-68') {
+                window.location.href = 'classified-contract.html';
+            }
+            else {
+                error.style.display = 'block'; // Show error if code is wrong
+            }
+        }
+    </script>
 
 </body>
 </html>
