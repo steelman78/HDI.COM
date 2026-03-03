@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Specific Styles for the Dashboard Layout */
         .dashboard-container {
             padding: 50px 10%;
         }
@@ -38,6 +37,7 @@
         }
         .dash-card h3 { color: #fff; margin-bottom: 15px; }
         .dash-card p { color: #8892b0; font-size: 0.9rem; margin-bottom: 20px; }
+        
         .dash-btn {
             display: inline-block;
             padding: 10px 20px;
@@ -49,11 +49,43 @@
             font-weight: 600;
             font-size: 0.85rem;
             transition: 0.3s;
+            cursor: pointer;
         }
         .dash-btn:hover {
             background-color: #3dace3;
             color: #0c121c;
         }
+
+        /* Search Terminal Section */
+        #search-section {
+            display: none; 
+            margin-top: 50px;
+            padding: 40px;
+            background: #0a192f;
+            border: 1px solid #3dace3;
+            text-align: center;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(61, 172, 227, 0.2);
+        }
+        .report-input {
+            background: #112240;
+            border: 1px solid #3dace3;
+            color: #3dace3;
+            padding: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            width: 250px;
+            text-align: center;
+            outline: none;
+            font-size: 1.1rem;
+        }
+        #terminal-status {
+            margin-top: 15px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            min-height: 20px;
+        }
+        .error { color: #ff4d4d; }
+        .success { color: #64ffda; }
     </style>
 </head>
 <body>
@@ -90,12 +122,67 @@
             </div>
 
             <div class="dash-card">
-                <h3>Sector 7 Calendar</h3>
-                <p>Review meeting schedules and briefing times.</p>
-                <a href="#" class="dash-btn">View Schedule</a>
+                <h3>Records Search</h3>
+                <p>Retrieve classified reports via serial ID.</p>
+                <button onclick="toggleSearch()" class="dash-btn">Open Terminal</button>
             </div>
         </div>
+
+        <div id="search-section">
+            <h2 style="color: #3dace3; margin-bottom: 10px; text-transform: uppercase;">Records Retrieval</h2>
+            <p style="color: #8892b0; margin-bottom: 20px; font-size: 0.8rem;">INPUT CLASSIFIED SERIAL NUMBER (RPT-XXXXXX)</p>
+            
+            <input type="text" id="reportID" class="report-input" placeholder="RPT-000000">
+            <button class="dash-btn" onclick="lookupReport()" style="margin-left: 10px;">EXECUTE</button>
+            
+            <div id="terminal-status"></div>
+            
+            <button onclick="toggleSearch()" style="display:block; margin: 20px auto; background:none; border:none; color:#8892b0; cursor:pointer; font-size: 0.7rem;">[ CLOSE CONNECTION ]</button>
+        </div>
     </div>
+
+    <script>
+        function toggleSearch() {
+            const section = document.getElementById('search-section');
+            if (section.style.display === 'block') {
+                section.style.display = 'none';
+            } else {
+                section.style.display = 'block';
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function lookupReport() {
+            const input = document.getElementById('reportID').value.trim().toUpperCase();
+            const status = document.getElementById('terminal-status');
+
+            // Reset status
+            status.innerHTML = "Searching database...";
+            status.className = "";
+
+            setTimeout(() => {
+                // Logic for the codes
+                if (input === 'RPT-9X2M47') {
+                    status.innerHTML = "ACCESS GRANTED. DECRYPTING PROJECT SENTINEL FILE...";
+                    status.className = "success";
+                    setTimeout(() => {
+                        window.location.href = 'report-sentinel.html';
+                    }, 1500);
+                } 
+                else if (input === 'JAN-12') {
+                    status.innerHTML = "ACCESS GRANTED. RETRIEVING INCIDENT LOG...";
+                    status.className = "success";
+                    setTimeout(() => {
+                        window.location.href = 'report-jan12.html';
+                    }, 1500);
+                }
+                else {
+                    status.innerHTML = "ACCESS DENIED: INVALID SERIAL IDENTIFIER";
+                    status.className = "error";
+                }
+            }, 800);
+        }
+    </script>
 
 </body>
 </html>
