@@ -52,13 +52,25 @@
             font-family: monospace;
         }
 
+        /* Clickable Link Styling */
+        .ticker-link {
+            color: #e6e6e6;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .ticker-link:hover {
+            color: #3dace3;
+            text-decoration: underline;
+        }
+
         /* Ticker Animation */
         @keyframes ticker-scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); } 
         }
 
-        /* Pause on hover for players to investigate the cipher */
+        /* Pause on hover */
         .news-banner:hover .news-ticker-container {
             animation-play-state: paused;
         }
@@ -92,15 +104,33 @@
     <section class="news-banner">
         <div class="news-label">Latest Updates</div>
         <div class="news-ticker-container">
-            <div class="news-item"><span>[JAN 28]</span> Internal Audit Underway at HDI Following Nationwide Alert Incident.</div>
-            <div class="news-item"><span>[JAN 19]</span> HDI Awarded Department of Defense Contract for Classified Defense Program.</div>
+            <div class="news-item">
+                <span>[JAN 28]</span> 
+                <a href="article1.html" class="ticker-link">Internal Audit Underway at HDI Following Nationwide Alert Incident.</a>
+            </div>
+            <div class="news-item">
+                <span>[JAN 19]</span> 
+                <a href="article2.html" class="ticker-link">HDI Awarded Department of Defense Contract for Classified Defense Program.</a>
+            </div>
             <div class="news-item"><span>[JAN 12]</span> tq paqe zaf dqyqnqd itmf tmbbqzqp fa tuyi</div>
-            <div class="news-item"><span>[JAN 05]</span> CEO Olivia Bennett Addresses Global Energy Summit on Upcoming Product Line.</div>
+            <div class="news-item">
+                <span>[JAN 05]</span> 
+                <a href="article3.html" class="ticker-link">CEO Olivia Bennett Addresses Global Energy Summit on Upcoming Product Line.</a>
+            </div>
             
-            <div class="news-item"><span>[JAN 28]</span> Internal Audit Underway at HDI Following Nationwide Alert Incident.</div>
-            <div class="news-item"><span>[JAN 19]</span> HDI Awarded Department of Defense Contract for Classified Defense Program.</div>
+            <div class="news-item">
+                <span>[JAN 28]</span> 
+                <a href="article1.html" class="ticker-link">Internal Audit Underway at HDI Following Nationwide Alert Incident.</a>
+            </div>
+            <div class="news-item">
+                <span>[JAN 19]</span> 
+                <a href="article2.html" class="ticker-link">HDI Awarded Department of Defense Contract for Classified Defense Program.</a>
+            </div>
             <div class="news-item"><span>[JAN 12]</span> tq paqe zaf dqyqnqd itmf tmbbqzqp fa tuyi</div>
-            <div class="news-item"><span>[JAN 05]</span> CEO Olivia Bennett Addresses Global Energy Summit on Upcoming Product Line.</div>
+            <div class="news-item">
+                <span>[JAN 05]</span> 
+                <a href="article3.html" class="ticker-link">CEO Olivia Bennett Addresses Global Energy Summit on Upcoming Product Line.</a>
+            </div>
         </div>
     </section>
 
